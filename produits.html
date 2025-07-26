@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Produits - Casquettes AKJ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header, nav, footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nos Produits</h1>
+  </header>
+
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="produits.html">🧢 Produits</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="panier.html">🛒 Panier</a>
+  </nav>
+
+  <div class="container">
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Classique" alt="Casquette Classique">
+        <h3>Casquette Classique</h3>
+        <p>CHF 19.90</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Street" alt="Casquette Street">
+        <h3>Casquette Street</h3>
+        <p>CHF 24.90</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Vintage" alt="Casquette Vintage">
+        <h3>Casquette Vintage</h3>
+        <p>CHF 21.90</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Casquettes AKJ
+  </footer>
+
+  <script>
+    function ajouterAuPanier(nom, prix) {
+      let panier = JSON.parse(localStorage.getItem('panier')) || [];
+      panier.push({ nom: nom, prix: prix });
+      localStorage.setItem('panier', JSON.stringify(panier));
+      alert(nom + " a été ajouté au panier !");
+    }
+  </script>
+
+</body>
+</html>
