@@ -1,0 +1,397 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header-icons i {
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    nav {
+      background-color: #000;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .products, .panier-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product, .item {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 220px;
+      text-align: center;
+    }
+
+    .product img, .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    .total {
+      font-weight: bold;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .search-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 20px;
+      overflow-y: auto;
+    }
+    .search-overlay.active {
+      display: flex;
+    }
+    .search-overlay input {
+      font-size: 18px;
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid black;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .search-close {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+   section#produits h3 {
+  text-align: left;
+  margin-left: 30px;
+  font-size: 1.4em;
+}
+.titre-centre {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+  
+button {
+  transition: all 0.3s ease;
+}
+button:active {
+  transform: scale(0.96);
+}
+.product:hover, .item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 600px) {
+  .product, .item {
+    width: 90%;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
+  margin: 0;
+  color: #333;
+}
+header {
+  background: #111;
+  padding: 20px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+header h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.header-icons i {
+  transition: transform 0.2s ease;
+}
+.header-icons i:hover {
+  transform: scale(1.2);
+}
+nav {
+  background: #222;
+  padding: 12px 0;
+}
+nav a {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 10px;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #f0c000;
+}
+section h2 {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.product, .item {
+  transition: all 0.3s ease-in-out;
+}
+.product:hover, .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+button {
+  background: #222;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background: #f0c000;
+  color: black;
+}
+footer {
+  background: #111;
+  color: #ccc;
+}
+footer h3 {
+  color: #fff;
+}
+#chat-widget {
+  background: #f0c000 !important;
+  color: #000 !important;
+}
+
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  color: #222;
+}
+
+header {
+  background: white;
+  padding: 25px 40px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 800;
+  color: #000;
+}
+
+.header-icons i {
+  color: #000;
+  font-size: 1.4em;
+  transition: color 0.2s, transform 0.2s;
+}
+.header-icons i:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+
+nav {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0;
+}
+nav a {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  color: #e63946;
+  border-bottom: 2px solid #e63946;
+}
+
+section h2 {
+  font-size: 2.4em;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.products, .panier-items {
+  gap: 30px;
+}
+
+.product, .item {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product:hover, .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product img, .item img {
+  border-radius: 12px;
+}
+
+button {
+  background: #000;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #e63946;
+  color: white;
+}
+
+input, textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+#chat-widget {
+  background: #e63946 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+footer {
+  background: #222;
+  color: #eee;
+  padding: 40px 20px;
+}
+footer h3 {
+  color: #fff;
+  border-color: #e63946;
+}
+
+.logo-akj {
+  height: 50px;
+  width: auto;
+}
+section {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+section#accueil.active {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  text-align: center;
+}
+
+
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+.page-content { flex: 1; }

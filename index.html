@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Les Casquettes AKJ</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="page-content"><header>
+<img src="logo-akj.png" alt="Logo AKJ" class="logo-akj" />
+<div class="header-icons">
+<i class="fas fa-search"></i>
+<div style="position: relative;">
+<i class="fas fa-shopping-cart" onclick="showSection('panier')"></i>
+<span id="cart-count" style="position: absolute; top: -8px; right: -10px; background: red; color: rgb(255, 255, 255); border-radius: 50%; padding: 2px 6px; font-size: 12px;">0</span>
+</div>
+</div>
+</header><nav>
+<a onclick="showSection('accueil')">Accueil</a>
+<a onclick="showSection('produits')">Boutique</a>
+<a onclick="showSection('contact')">Contact</a>
+</nav><section class="active" id="accueil">
+<h2>Bienvenue chez AKJ</h2>
+</section><section id="produits">
+<div style="text-align: center; margin-bottom: 20px;">
+<label for="tri">Trier par :</label>
+<select id="tri" onchange="trierProduits()" style="padding: 5px 10px; border-radius: 5px;">
+<option value="default">Par défaut</option>
+<option value="prix-asc">Prix croissant</option>
+<option value="prix-desc">Prix décroissant</option>
+<option value="nom">Nom</option>
+</select>
+</div>
+<h2 class="titre-centre">Nos Produits</h2>
+<h3>Pulls</h3>
+<div class="products">
+<div class="product">
+<img alt="Pull Noir" src="https://via.placeholder.com/200x150?text=Pull+Noir"/>
+<h3>Pull Noir</h3>
+<p>CHF 39.90</p>
+<button onclick="ajouterPanier('Pull Noir', 39.90)">Ajouter au panier</button>
+</div>
+<div class="product">
+<img alt="Pull Oversize" src="https://via.placeholder.com/200x150?text=Pull+Oversize"/>
+<h3>Pull Oversize</h3>
+<p>CHF 44.90</p>
+<button onclick="ajouterPanier('Pull Oversize', 44.90)">Ajouter au panier</button>
+</div>
+</div>
+<h3>T-Shirts</h3>
+<div class="products">
+<div class="product">
+<img alt="T-Shirt Logo" src="https://via.placeholder.com/200x150?text=T-Shirt+Logo"/>
+<h3>T-Shirt Logo</h3>
+<p>CHF 14.90</p>
+<button onclick="ajouterPanier('T-Shirt Logo', 14.90)">Ajouter au panier</button>
+</div>
+<div class="product">
+<img alt="T-Shirt Blanc" src="https://via.placeholder.com/200x150?text=T-Shirt+Blanc"/>
+<h3>T-Shirt Blanc</h3>
+<p>CHF 16.90</p>
+<button onclick="ajouterPanier('T-Shirt Blanc', 16.90)">Ajouter au panier</button>
+</div>
+</div>
+<h3>Casquettes</h3>
+<div class="products">
+<div class="product">
+<img alt="Classique" src="https://via.placeholder.com/200x150?text=Classique"/>
+<h3>Casquette Classique</h3>
+<p>CHF 19.90</p>
+<button onclick="ajouterPanier('Casquette Classique', 19.90)">Ajouter au panier</button>
+</div>
+<div class="product">
+<img alt="Street" src="https://via.placeholder.com/200x150?text=Street"/>
+<h3>Casquette Street</h3>
+<p>CHF 24.90</p>
+<button onclick="ajouterPanier('Casquette Street', 24.90)">Ajouter au panier</button>
+</div>
+<div class="product">
+<img alt="Vintage" src="https://via.placeholder.com/200x150?text=Vintage"/>
+<h3>Casquette Vintage</h3>
+<p>CHF 21.90</p>
+<button onclick="ajouterPanier('Casquette Vintage', 21.90)">Ajouter au panier</button>
+</div>
+</div>
+</section><section id="panier">
+<h2>Votre Panier</h2>
+<div class="panier-items" id="contenuPanier"></div>
+<div id="panier-actions" style="text-align:center; margin-top: 30px;"></div>
+</section><section id="paiement">
+<h2>Paiement Sécurisé</h2>
+<form onsubmit="return simulerPaiement()" style="max-width: 400px; margin: auto;">
+<input placeholder="Nom complet" required="" type="text"/>
+<input placeholder="Numéro de carte" required="" type="text"/>
+<input placeholder="Date d'expiration" required="" type="text"/>
+<input placeholder="CVV" required="" type="text"/>
+<input placeholder="Adresse de livraison" required="" type="text"/>
+<button type="submit">Payer</button>
+</form>
+<p id="confirmationPaiement" style="text-align: center; font-weight: bold; display: none; color: green; margin-top: 20px;">✅ Paiement effectué avec succès !</p>
+</section><section id="contact">
+<h2>Contactez-nous</h2>
+<form id="contact-form">
+<input name="name" placeholder="Votre nom" required="" type="text"/>
+<input name="email" placeholder="Votre email" required="" type="email"/>
+<textarea name="message" placeholder="Votre message" required="" rows="5"></textarea>
+<button type="submit">Envoyer</button>
+</form>
+</section><section id="developpeur">
+<h2 style="text-align: center;">Alexis</h2>
+<p style="text-align: center; font-style: italic;">Développeurs</p>
+</section><div class="search-overlay" id="searchOverlay">
+<a class="search-close" onclick="fermerRecherche()">×</a>
+<input id="searchInput" placeholder="Rechercher un produit..." type="text"/>
+<div class="products" id="resultatsRecherche"></div>
+</div><script src="script.js" defer></script>
+<div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; background: #000; color: white; padding: 10px 15px; border-radius: 10px 10px 0 0; cursor: pointer; z-index: 1000;">
+  💬 Besoin d'aide ?
+</div><div id="chat-box" style="display: none; position: fixed; bottom: 60px; right: 20px; width: 260px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
+<div style="background: #000; color: white; padding: 10px; border-radius: 10px 10px 0 0;">Support Client</div>
+<div style="padding: 10px;">
+<input id="chatMessage" placeholder="Votre message..." style="width: 100%; padding: 5px;" type="text"/>
+<button onclick="envoyerMessage()" style="margin-top: 5px; width: 100%;">Envoyer</button>
+<div id="chatResponse" style="margin-top: 10px; font-size: 0.9em; color: green;"></div>
+</div>
+</div></div><footer style="background: #000000; color: white; padding: 40px 20px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+<div style="flex: 1 1 180px; margin: 10px;">
+<h3 style="border-bottom: 2px solid #6846a5; padding-bottom: 5px;">Navigation</h3>
+<p><a href="#" onclick="showSection('accueil')" style="color: white; text-decoration: none;">Accueil</a></p>
+<p><a href="#" onclick="showSection('produits')" style="color: white; text-decoration: none;">Boutique</a></p>
+<p><a href="#" onclick="showSection('contact')" style="color: white; text-decoration: none;">Contact</a></p>
+</div>
+<div style="flex: 1 1 180px; margin: 10px;">
+<h3 style="border-bottom: 2px solid #6846a5; padding-bottom: 5px;">Contact</h3>
+<p><a href="#" onclick="showSection('contact')" style="color: white; text-decoration: none;">Une question ?</a></p>
+<p><a href="#" onclick="showSection('developpeur')" style="color: white; text-decoration: none;">Développeurs</a></p>
+</div>
+<div style="flex: 1 1 180px; margin: 10px;">
+<h3 style="border-bottom: 2px solid #6846a5; padding-bottom: 5px;">Termes et Conditions</h3>
+<p>Mentions légales</p>
+<p>CGU</p>
+</div>
+<div style="flex: 1 1 180px; margin: 10px; text-align: center;">
+<h3 style="border-bottom: 2px solid #6846a5; padding-bottom: 5px;">Nous suivre</h3>
+<div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+<a href="https://instagram.com/ton_nom" style="color: white;" target="_blank">
+<i class="fab fa-instagram fa-lg"></i>
+</a>
+<a href="https://www.tiktok.com/@akjshop" style="color: white;" target="_blank">
+<i class="fab fa-tiktok fa-lg"></i>
+</a>
+<a href="https://discord.gg/EeVxU6Bu" style="color: white;" target="_blank">
+<i class="fab fa-discord fa-lg"></i>
+</a>
+</div>
+</div>
+</div>
+<p style="text-align: center; margin-top: 30px;">© 2025 AKJ</p>
+</footer></body>
+</html>
